@@ -3,6 +3,7 @@ import CurrencyInput from "./CurrencyInput";
 import SubmitButton from "./SubmitButton";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import bootstrap from 'bootstrap';
 
 function App() {
   const [amount1, setAmount1] = useState(1);
@@ -59,7 +60,13 @@ function App() {
     setAmount2(amount2 * rates[currency2] / rates[currency3]);
     setcurrency3(currency3);
   }
+  function handle(){
+
+  }
+  
+  
   function handleSubmit(){
+
 
   }
 
