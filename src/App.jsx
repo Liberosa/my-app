@@ -1,6 +1,5 @@
 import './App.css';
 import CurrencyInput from "./CurrencyInput";
-import SubmitButton from "./SubmitButton";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -14,7 +13,7 @@ function App() {
   const [currency2, setcurrency2] = useState('USD');
   const [currency3, setcurrency3] = useState('EUR');
   const [rates, setRates] = useState([]);
-  const [focus, setFocus] = useState('');
+
 
   useEffect(() => {
     axios.get('http://data.fixer.io/api/latest?access_key=5868ceabb7db8aa91bbab9ad61887f9b&format=1')
@@ -60,9 +59,6 @@ function App() {
     setAmount2(amount2 * rates[currency2] / rates[currency3]);
     setcurrency3(currency3);
   }
-  function handleSubmit(){
-
-  }
 
   return (
     <div >
@@ -88,7 +84,6 @@ function App() {
         currencies={Object.keys(rates)}
         amount={amount3}
         currency={currency3} />
-      <SubmitButton onClick ={handleSubmit}/>
     </div>
   );
 }
