@@ -1,9 +1,16 @@
 import './App.css';
 import CurrencyInput from "./CurrencyInput";
+<<<<<<< HEAD
 import SubmitButton from "./SubmitButton";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import bootstrap from 'bootstrap';
+=======
+import { useState, useEffect } from "react";
+import axios from "axios";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from "./Header";
+>>>>>>> b06ac7cfe898e30ddd2bc9fa6ae74e4e9f30bde1
 
 function App() {
   const [amount1, setAmount1] = useState(1);
@@ -13,7 +20,11 @@ function App() {
   const [currency2, setcurrency2] = useState('USD');
   const [currency3, setcurrency3] = useState('EUR');
   const [rates, setRates] = useState([]);
+<<<<<<< HEAD
   const [focus, setFocus] = useState('');
+=======
+
+>>>>>>> b06ac7cfe898e30ddd2bc9fa6ae74e4e9f30bde1
 
   useEffect(() => {
     axios.get('http://data.fixer.io/api/latest?access_key=5868ceabb7db8aa91bbab9ad61887f9b&format=1')
@@ -46,7 +57,10 @@ function App() {
     setAmount1(amount2 * rates[currency1] / rates[currency2]);
     setAmount3(amount2 * rates[currency3] / rates[currency2]);
     setcurrency2(currency2);
+<<<<<<< HEAD
     console.log(typeof(amount2))
+=======
+>>>>>>> b06ac7cfe898e30ddd2bc9fa6ae74e4e9f30bde1
   }
 
   function handleAmount3Change(amount3) {
@@ -60,6 +74,7 @@ function App() {
     setAmount2(amount2 * rates[currency2] / rates[currency3]);
     setcurrency3(currency3);
   }
+<<<<<<< HEAD
   function handle(){
 
   }
@@ -72,6 +87,12 @@ function App() {
 
   return (
     <div >
+=======
+
+  return (
+    <div >
+      <Header/>
+>>>>>>> b06ac7cfe898e30ddd2bc9fa6ae74e4e9f30bde1
       <CurrencyInput
         name
         onAmountChange={handleAmount1Change}
@@ -93,7 +114,10 @@ function App() {
         currencies={Object.keys(rates)}
         amount={amount3}
         currency={currency3} />
+<<<<<<< HEAD
       <SubmitButton onClick ={handleSubmit}/>
+=======
+>>>>>>> b06ac7cfe898e30ddd2bc9fa6ae74e4e9f30bde1
     </div>
   );
 }
